@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love you</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width: 100%;
+        height: 100vh;
+
+    }
+    .cover{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        border: 1px solid rgb(203, 203, 203);
+        width:300px;
+        border-radius: 5px;
+        height: 300px;
+        padding:20px;
+        background: rgb(121,9,114);
+background: linear-gradient(90deg, rgba(121,9,114,1) 0%, rgba(188,5,110,1) 50%, rgba(255,0,0,1) 100%);
+
+
+    }
+    .conten{
+        position:absolute;
+        top:20px;
+        text-align: center;
+        color:rgb(87, 87, 87);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .footer{
+        
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 125px;
+    height:35px;
+    top:90px;
+    position: relative;
+    overflow: hidden;
+
+    }
+    .no,.yes{
+        position: absolute;
+        width:50%;
+        display: flex;
+        justify-content: center;
+    }
+    .no{
+        right:0px
+    }
+    .yes{
+        left: 0px;
+    }
+    .footer button{
+        border:none;
+        transition:.5s;
+        background: rgb(121,9,114);
+        background: linear-gradient(90deg, rgba(121,9,114,1) 0%, rgba(188,5,110,1) 50%, rgba(255,0,0,1) 100%);
+        color:white;
+        padding:10px 35px;
+        border-radius: 5px;
+    }
+    .footer button:hover{
+        background:rgb(189, 0, 223);
+    }
+    .no:hover>button{
+        transition:.5s;
+        margin-left:300px;
+    }
+    .head{
+        background-image: url(love.webp);
+    width: 320px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    border-radius: 5px;
+    }
+</style>
+<body>
+    <audio class="music">
+        <source src="love.ogg" type="audio/ogg">
+        <source src="love.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    <div class="cover">
+        <div class="head">
+            
+        </div>
+        <div class="conten">
+             <h1 class="result">DO YOU LOVE ME😜</h1>
+        </div>
+       
+        <div class="footer">
+
+            <div class="yes"><button id="yes" >YES</button></div>
+            <div class="no"><button id="no">NO</button></div>
+
+        </div>
+        
+    </div>
+</body>
+<script>
+    var show=document.querySelector(".result");
+    var yes=document.querySelector("#yes");
+    var music=document.querySelector(".music");
+    yes.addEventListener("click",function(){
+        show.innerHTML="OH!! YOU LOVE ME!😍";
+        music.play();
+    });
+    // var show=document.querySelector("result");
+</script>
+</html>
