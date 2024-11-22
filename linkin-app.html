@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        function openApp() {
+            // Try to open the app using the custom scheme
+            window.location = "csxphsarhunscheme://com.csx.phsarhun?paid=true";
+
+            // Fallback: After a delay, redirect to the app store
+            setTimeout(() => {
+                window.location = "https://play.google.com/store/apps/details?id=com.csx.phsarhun";
+            }, 2000); // Adjust delay as needed
+        }
+    </script>
+</head>
+<body onload="openApp()">
+    <p>Redirecting you to the app...</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        function openApp() {
+            // Attempt to open the app via the custom scheme
+            window.location = "csxphsarhunscheme://com.csx.phsarhun?paid=true";
+
+            // Fallback: Redirect to the app store after a short delay
+            setTimeout(() => {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                if (/android/i.test(userAgent)) {
+               // Try opening Play Store directly
+               window.location = "market://details?id=com.csx.phsarhun";
+
+                // If market:// doesn't work, fallback to the web Play Store URL
+                setTimeout(() => {
+                    window.location = "https://play.google.com/store/apps/details?id=com.csx.phsarhun";
+                }, 3000);
+                } else if (/iPad|iPhone|iPod/i.test(userAgent) || !window.MSStream) {
+                    // Redirect to App Store for iOS
+                    window.location = "https://apps.apple.com/app/phsarhun/id1367901767"; // Replace with your App Store link
+                } else {
+                    // Default fallback for unsupported platforms
+                    window.location = "https://phsarhun.com";
+                }
+            }, 500); // Adjust delay as needed
+        }
+    </script>
+</head>
+<body onload="openApp()">
+    <p>Redirecting you to the app or store...</p>
+</body>
+</html>
