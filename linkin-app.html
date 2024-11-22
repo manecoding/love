@@ -27,6 +27,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
+    <style>
+        /* HTML: <div class="loader"></div> */
+        .loader {
+        width: 48px;
+        aspect-ratio: 1;
+        border-radius: 500%;
+        background: 
+            radial-gradient(farthest-side,#01073b 0%,#0000) top/8px 8px no-repeat,
+            conic-gradient(#00000000 0%,#01073b);
+        -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 2px),#000 0);
+        animation: l13 0.5s infinite linear;
+        }
+        @keyframes l13{ 
+        100%{transform: rotate(1turn)}
+        }
+    </style>
     <script>
         function openApp() {
             // Get the current URL
@@ -66,11 +82,14 @@
                     // Default fallback for unsupported platforms
                     window.location = "https://phsarhun.com";
                 }
-            }, 500); // Adjust delay as needed
+            }, 3000000); // Adjust delay as needed
         }
     </script>
 </head>
 <body onload="openApp()">
-    <p>Redirecting you to the app or store...</p>
+    <div style="display: flex;flex-direction: column;height: 100vh;width: 100%;justify-content: center;align-items: center;">
+        <div class="loader"></div> 
+        <div class="d"><p style="text-align: center;color: #565656;">Redirecting you to the app or store...</p></div>
+    </div>
 </body>
 </html>
