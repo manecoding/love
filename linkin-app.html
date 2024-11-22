@@ -29,9 +29,24 @@
     <title>Redirecting...</title>
     <script>
         function openApp() {
-            // Attempt to open the app via the custom scheme
-            window.location = "csxphsarhunscheme://com.csx.phsarhun?paid=true";
+            // Get the current URL
+            const url = new URL(window.location.href);
 
+            // Get the search params (query string)
+            const params = new URLSearchParams(url.search); 
+
+            // Retrieve specific query parameters
+            const broker = params.get('broker');  // "value"
+            const serc = params.get('serc');  // "value2"
+
+            if(broker != null && serc != null){
+                // Attempt to open the app via the custom scheme
+                window.location = `csxphsarhunscheme://com.csx.phsarhun?broker=${broker}&serc=${serc}`;
+            }else{
+                // Attempt to open the app via the custom scheme
+                window.location = `csxphsarhunscheme://com.csx.phsarhun`;
+            }
+            
             // Fallback: Redirect to the app store after a short delay
             setTimeout(() => {
                 const userAgent = navigator.userAgent || navigator.vendor || window.opera;
