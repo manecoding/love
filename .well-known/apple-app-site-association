@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "S44H4QUP4B.com.csx.phsarhun",
+                "paths": [ "/app-path*" ]
+            }
+        ]
+    }
+}

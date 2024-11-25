@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.csx.phsarhun",
+        "sha256_cert_fingerprints":
+          ["21:D3:33:BE:2A:A6:C5:29:8B:BA:8A:C8:3D:90:7E:9F:F6:4C:0C:31:33:F5:DD:E5:E8:28:23:FF:A9:04:18:BF"]
+      }
+    }
+  ]
